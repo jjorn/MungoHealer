@@ -9,5 +9,5 @@
 import Foundation
 
 func LocalizedString(_ key: String) -> String { // swiftlint:disable:this identifier_name
-    return NSLocalizedString(key, tableName: nil, bundle: Bundle(for: MungoHealer.self), value: "", comment: "")
+    return NSLocalizedString(key, tableName: nil, bundle: Bundle(for: Mungo.self), value: "", comment: "")
 }

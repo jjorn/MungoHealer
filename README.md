@@ -304,7 +304,7 @@ The easiest way to get started with MungoHealer is to use a global variable and 
 import MungoHealer
 import UIKit
 
-var mungo: MungoHealer!
+var mungo: Mungo!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -317,7 +317,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func configureMungoHealer() {
         let errorHandler = AlertLogErrorHandler(window: window!, logError: { print("Error: \($0)") })
-        mungo = MungoHealer(errorHandler: errorHandler)
+        mungo = Mungo(errorHandler: errorHandler)
     }
 }
 ```
@@ -325,7 +325,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 Note that the following steps were taken in the above code:
 
 1. Add `import MungoHealer` at the top
-2. Add `var mungo: MungoHealer!` global variable
+2. Add `var mungo: Mungo!` global variable
 3. Add a private `configureMungoHealer()` method
 4. Provide your preferred `logError` handler (e.g. [SwiftyBeaver](https://github.com/SwiftyBeaver/SwiftyBeaver))
 5. Call `configureMungoHealer()` on app launch
@@ -343,12 +343,12 @@ While starting with the `AlertLogErrorHandler` is recommended by default, you mi
 
 See the implementation of `AlertLogErrorHandler` [here](https://github.com/JamitLabs/MungoHealer/blob/stable/Frameworks/MungoHealer/ErrorHandlers/AlertLogErrorHandler.swift) for a working example.
 
-Note that you don't have to use a single global variable named `mungo` as in the example above. You could also write your own Singleton with multiple `MungoHealer` objects, each with a different `ErrorHandler` type. This way you could choose to either show an alert or your custom handling, depending on the context. The Singleton might look something like this:
+Note that you don't have to use a single global variable named `mungo` as in the example above. You could also write your own Singleton with multiple `Mungo` objects, each with a different `ErrorHandler` type. This way you could choose to either show an alert or your custom handling, depending on the context. The Singleton might look something like this:
 
 ```swift
 enum ErrorHandling {
-    static var alertLogHandler: MungoHealer!
-    static var myCustomHandler: MungoHealer!
+    static var alertLogHandler: Mungo!
+    static var myCustomHandler: Mungo!
 }
 ```
 

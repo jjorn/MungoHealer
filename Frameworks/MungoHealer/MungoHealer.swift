@@ -6,7 +6,7 @@
 import Foundation
 
 /// The main error handler.
-public class MungoHealer {
+public class Mungo {
     private let errorHandler: ErrorHandler
 
     /// Creates a new MungoHealer object with the given handlers.

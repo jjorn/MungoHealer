@@ -6,7 +6,7 @@
 import MungoHealer
 import UIKit
 
-var mungo: MungoHealer!
+var mungo: Mungo!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func configureMungoHealer() {
         let errorHandler = AlertLogErrorHandler(window: window!, logError: { print("Error: \($0)") })
-        mungo = MungoHealer(errorHandler: errorHandler)
+        mungo = Mungo(errorHandler: errorHandler)
     }
 }
 
